@@ -14,3 +14,7 @@ After the installation has finished log out and select XFCE from the gear button
 ## Sleep button
 
 In the `Power Manager` settings, set `When sleep button is pressed` to `Suspend` and disable all the others.
+
+## Fix double volume glitch
+
+From the panel settings, select `PulseAudio Plugin` and untick `Show notification when volume changes`.
