@@ -51,3 +51,11 @@ sudo apt-get remove iio-sensor-proxy
 ```
 
 Restart.
+
+## Add the app menu to the XFCE panel
+
+Install xfce4-appmenu:
+
+```bash
+sudo apt-get install xfce4-appmenu
+```
