@@ -32,3 +32,20 @@ Create a new shortcut from `Settings`>`Keyboard`>`Application Shortcuts` with th
 ```bash
 dbus-send --type=method_call --dest=org.onboard.Onboard /org/onboard/Onboard/Keyboard org.onboard.Onboard.Keyboard.ToggleVisible
 ```
+
+## Disable automatic rotation
+
+Stop and disable the service:
+
+```bash
+sudo systemctl stop iio-sensor-proxy.service
+sudo systemctl disable iio-sensor-proxy.service
+```
+
+Then proceed to delete the package:
+
+```bash
+sudo apt-get remove iio-sensor-proxy
+```
+
+Restart.
