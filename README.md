@@ -18,3 +18,17 @@ In the `Power Manager` settings, set `When sleep button is pressed` to `Suspend`
 ## Fix double volume glitch
 
 From the panel settings, select `PulseAudio Plugin` and untick `Show notification when volume changes`.
+
+## Virtual Keyboard
+
+Install onboard:
+
+```bash
+sudo apt-get install onboard
+```
+
+Create a new shortcut from `Settings`>`Keyboard`>`Application Shortcuts` with the following command:
+
+```bash
+dbus-send --type=method_call --dest=org.onboard.Onboard /org/onboard/Onboard/Keyboard org.onboard.Onboard.Keyboard.ToggleVisible
+```
