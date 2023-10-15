@@ -31,6 +31,8 @@ In the `Power Manager` settings, set `When sleep button is pressed` to `Suspend`
 
 In the `Display` tab disable `Display power management` and set `Brightness reduction` to `80%` and `Reduce after` to `120 seconds`.
 
+Disable everything in `Screensaver` in `Settings`.
+
 ## Fix double volume glitch
 
 From the panel settings, select `PulseAudio Plugin` and untick `Show notification when volume changes`.
