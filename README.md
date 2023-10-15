@@ -75,3 +75,34 @@ Install xfce4-appmenu:
 ```bash
 sudo apt-get install xfce4-appmenu
 ```
+
+## Install pip and Anki
+
+Install pip and upgrade it:
+
+```bash
+sudo apt install python3-pip
+pip3 install --upgrade pip
+```
+
+Add .local/bin to PATH:
+
+```bash
+export PATH=$PATH:$HOME/.local/bin
+```
+
+Install anki and aqt:
+
+```bash
+pip install anki
+pip install aqt
+```
+
+Create shortcut:
+
+```bash
+git clone https://github.com/postkevone/chromebook-anki.git
+sudo mv chromebook-anki/anki.desktop /usr/share/applications/anki.desktop
+sudo mv chromebook-anki/anki.png /usr/share/pixmaps/anki.png
+sudo rm -r chromebook-anki
+```
