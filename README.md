@@ -7,6 +7,20 @@ My configuration for L4T Ubuntu Jammy 22.04 LTS
 sudo apt update && sudo apt-get dist-upgrade
 ```
 
+## Joystick mapping
+
+Backup original file:
+
+```bash
+sudo mv /usr/share/X11/xorg.conf.d/50-joystick.conf /usr/share/X11/xorg.conf.d/50-joystick.conf.bak
+```
+
+Use the new config file in this repository:
+
+```bash
+sudo mv 50-joystick.conf /usr/share/X11/xorg.conf.d/50-joystick.conf
+```
+
 ## Run the L4T Megascript and install the XFCE desktop environment
 
 After the installation has finished log out and select XFCE from the gear button located at the bottom-right corner of the login screen.
