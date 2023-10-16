@@ -75,6 +75,12 @@ Install xfce4-appmenu:
 ```bash
 sudo apt-get install xfce4-appmenu
 ```
+## System program problem detected at startup fix
+
+Delete past crashes:
+```bash
+sudo rm /var/crash/*
+```
 
 ## Install pip and Anki
 
