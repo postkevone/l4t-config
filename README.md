@@ -128,3 +128,6 @@ sudo mv chromebook-anki/anki.desktop /usr/share/applications/anki.desktop
 sudo mv chromebook-anki/anki.png /usr/share/pixmaps/anki.png
 sudo rm -r chromebook-anki
 ```
+## Stylus theme for netflix
+
+https://userstyles.world/style/12142/kebi-streaming
