@@ -9,6 +9,14 @@ sudo apt update && sudo apt-get dist-upgrade
 
 Restart.
 
+## Automatic login
+
+Change the `Login` keyring password to a blank password and enable automatic login from `Settings`>`User`.
+
+## Run the L4T Megascript and install the XFCE desktop environment
+
+After the installation has finished log out and select XFCE from the gear button located at the bottom-right corner of the login screen.
+
 ## Joystick mapping
 
 Backup original file:
@@ -26,14 +34,6 @@ sudo rm -r l4t-config
 ```
 
 Logout or restart.
-
-## Automatic login
-
-Change the `Login` keyring password to a blank password and enable automatic login from `Settings`>`User`.
-
-## Run the L4T Megascript and install the XFCE desktop environment
-
-After the installation has finished log out and select XFCE from the gear button located at the bottom-right corner of the login screen.
 
 ## Sleep button
 
@@ -64,7 +64,7 @@ Create a new shortcut from `Settings`>`Keyboard`>`Application Shortcuts` with th
 dbus-send --type=method_call --dest=org.onboard.Onboard /org/onboard/Onboard/Keyboard org.onboard.Onboard.Keyboard.ToggleVisible
 ```
 
-## Aapplications at login
+## Applications at login
 
 `Settings`>`Application Autostart`
 
