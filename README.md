@@ -70,15 +70,15 @@ dbus-send --type=method_call --dest=org.onboard.Onboard /org/onboard/Onboard/Key
 
 Disable:
 
-- Auto-Rotate
-- Backup monitor
-- Evolution Alarm Notify
-- Geoclue Demo agent
-- Print Queue Applet
-- Screensaver
-- Ubuntu Advantage Notification
-- Ubuntu report try to sends metrics data on release upgrade
-- XFCE Volume Daemon
+- Auto-Rotate (to disable auto rotate)
+- Backup monitor (unneeded)
+- Evolution Alarm Notify (unneeded)
+- Geoclue Demo agent (unneeded)
+- Print Queue Applet (unneeded, enable in you need printing services)
+- Screensaver (completely disable screensaver to fix sleep)
+- Ubuntu Advantage Notification (bloat)
+- Ubuntu report try to sends metrics data on release upgrade (unneeded)
+- XFCE Volume Daemon (disable to fix double notification)
 
 Enable:
 
