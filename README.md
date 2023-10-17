@@ -1,6 +1,12 @@
 # l4t-config
 My configuration for L4T Ubuntu Jammy 22.04 LTS
 
+## Update the build
+
+```bash
+sudo apt update && sudo apt-get dist-upgrade
+```
+
 ## Joystick mapping
 
 Backup original file:
@@ -19,11 +25,9 @@ sudo rm -r l4t-config
 
 Logout or restart.
 
-## Update the build
+## Automatic login
 
-```bash
-sudo apt update && sudo apt-get dist-upgrade
-```
+Disable or delete passwords in the keyring and enable automatic login from `Settings`>`User`.
 
 ## Run the L4T Megascript and install the XFCE desktop environment
 
@@ -74,7 +78,7 @@ Restart.
 
 ## Add the app menu to the XFCE panel
 
-Install xfce4-appmenu:
+Install `xfce4-appmenu-plugin`:
 
 ```bash
 sudo apt-get install xfce4-appmenu
