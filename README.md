@@ -7,6 +7,8 @@ My configuration for L4T Ubuntu Jammy 22.04 LTS
 sudo apt update && sudo apt-get dist-upgrade
 ```
 
+Restart.
+
 ## Joystick mapping
 
 Backup original file:
@@ -27,7 +29,7 @@ Logout or restart.
 
 ## Automatic login
 
-Disable or delete passwords in the keyring and enable automatic login from `Settings`>`User`.
+Change the `Login` keyring password to a blank password and enable automatic login from `Settings`>`User`.
 
 ## Run the L4T Megascript and install the XFCE desktop environment
 
@@ -35,22 +37,25 @@ After the installation has finished log out and select XFCE from the gear button
 
 ## Sleep button
 
-In the `Power Manager` settings, set `When sleep button is pressed` to `Suspend` and disable all the others.
+In the `Power Manager` settings, set `When sleep button is pressed` to `Ask` and disable all the others.
 
-In the `Display` tab disable `Display power management` and set `Brightness reduction` to `80%` and `Reduce after` to `120 seconds`.
+In the `Display` tab disable `Display power management` and set `Reduce after` to `never`.
 
-Disable everything in `Screensaver` in `Settings`.
+Disable everything in `Settings`>`Screensaver`.
 
-## Fix double volume glitch
+## System program problem detected at startup fix
 
-From the panel settings, select `PulseAudio Plugin` and untick `Show notification when volume changes`.
+Delete past crashes:
+```bash
+sudo rm /var/crash/*
+```
 
 ## Virtual Keyboard
 
 Install onboard:
 
 ```bash
-sudo apt-get install onboard
+sudo apt install onboard
 ```
 
 Create a new shortcut from `Settings`>`Keyboard`>`Application Shortcuts` with the following command:
@@ -59,35 +64,32 @@ Create a new shortcut from `Settings`>`Keyboard`>`Application Shortcuts` with th
 dbus-send --type=method_call --dest=org.onboard.Onboard /org/onboard/Onboard/Keyboard org.onboard.Onboard.Keyboard.ToggleVisible
 ```
 
-## Disable automatic rotation
+## Aapplications at login
 
-Stop and disable the service:
+`Settings`>`Application Autostart`
 
-```bash
-sudo systemctl stop iio-sensor-proxy.service
-sudo systemctl disable iio-sensor-proxy.service
-```
+Disable:
 
-Then proceed to delete the package:
+- Auto-Rotate
+- Backup monitor
+- Evolution Alarm Notify
+- Geoclue Demo agent
+- Print Queue Applet
+- Screensaver
+- Ubuntu Advantage Notification
+- Ubuntu report try to sends metrics data on release upgrade
+- XFCE Volume Daemon
 
-```bash
-sudo apt-get remove iio-sensor-proxy
-```
+Enable:
 
-Restart.
+- Onboard
 
 ## Add the app menu to the XFCE panel
 
 Install `xfce4-appmenu-plugin`:
 
 ```bash
-sudo apt-get install xfce4-appmenu
-```
-## System program problem detected at startup fix
-
-Delete past crashes:
-```bash
-sudo rm /var/crash/*
+sudo apt-get install xfce4-appmenu-plugin
 ```
 
 ## Install pip and Anki
