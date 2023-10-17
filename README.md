@@ -107,6 +107,12 @@ Add .local/bin to PATH:
 export PATH=$PATH:$HOME/.local/bin
 ```
 
+Install PyQT packages:
+
+```bash
+sudo apt install python3-pyqt5.{qtwebengine,qtmultimedia}
+```
+
 Install anki and aqt:
 
 ```bash
