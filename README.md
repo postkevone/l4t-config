@@ -27,12 +27,6 @@ sudo rm -r l4t-config
 
 Logout or restart.
 
-## Stylus theme for netflix
-
-https://userstyles.world/style/12142/kebi-streaming
-
-# Bionic
-
 ## Create 4GB swap RAM
 
 ```bash
@@ -41,6 +35,36 @@ sudo chmod 600 /swapfile
 sudo mkswap /swapfile
 sudo swapon /swapfile
 ```
+
+### Add login command so that the swap file is loaded automatically
+
+Create `/etc/rc.local` if not present already.
+
+```bash
+sudo touch /etc/rc.local
+```
+
+Add the following commands to the file:
+
+```bash
+sudo echo "mkswap /swapfile" >> /etc/rc.local
+sudo echo "swapon /swapfile" >> /etc/rc.local
+```
+
+Check the status of the swap memory:
+
+```bash
+swapon --show
+```
+
+Turn off the swap ram (do not use `-a` as it will also disable the zram):
+```bash
+sudo swapoff /swapfile
+```
+
+## Stylus theme for netflix
+
+https://userstyles.world/style/12142/kebi-streaming
 
 # Jammy
 
