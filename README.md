@@ -38,17 +38,52 @@ sudo swapon /swapfile
 
 ### Add login command so that the swap file is loaded automatically
 
+Check the status of rc-local:
+
+```bash
+sudo systemctl status rc-local
+```
+
 Create `/etc/rc.local` if not present already.
 
 ```bash
-sudo touch /etc/rc.local
+sudo nano /etc/rc.local
 ```
 
-Add the following commands to the file:
+<details>
+<summary>File contents</summary>
 
 ```bash
-sudo echo "mkswap /swapfile" >> /etc/rc.local
-sudo echo "swapon /swapfile" >> /etc/rc.local
+#!/bin/sh -e
+#
+# rc.local
+#
+# This script is executed at the end of each multiuser runlevel.
+# Make sure that the script will "exit 0" on success or any other
+# value on error.
+#
+# In order to enable or disable this script just change the execution
+# bits.
+#
+# By default this script does nothing.
+
+mkswap /swapfile
+swapon /swapfile
+
+exit 0
+```
+</details>
+<br>
+Make sure /etc/rc.local file is executable.
+
+```bash
+sudo chmod +x /etc/rc.local
+```
+
+Finally, enable the service on system boot:
+
+```bash
+sudo systemctl enable rc-local
 ```
 
 Check the status of the swap memory:
