@@ -37,6 +37,7 @@ https://userstyles.world/style/12142/kebi-streaming
 
 ```bash
 sudo dd if=/dev/zero of=/swapfile bs=1048576 count=4096
+sudo chmod 600 /swapfile
 sudo mkswap /swapfile
 sudo swapon /swapfile
 ```
