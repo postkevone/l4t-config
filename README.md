@@ -31,6 +31,16 @@ Logout or restart.
 
 https://userstyles.world/style/12142/kebi-streaming
 
+# Bionic
+
+## Create 4GB swap RAM
+
+```bash
+sudo dd if=/dev/zero of=/swapfile bs=1048576 count=4096
+sudo mkswap /swapfile
+sudo swapon /swapfile
+```
+
 # Jammy
 
 ## Automatic login
