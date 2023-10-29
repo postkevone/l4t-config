@@ -1,5 +1,5 @@
 # l4t-config
-My configuration for L4T Ubuntu Jammy 22.04 LTS
+My configuration for L4T Ubuntu Bionic and Jammy
 
 ## Update the build
 
@@ -8,14 +8,6 @@ sudo apt update && sudo apt-get dist-upgrade
 ```
 
 Restart.
-
-## Automatic login
-
-Change the `Login` keyring password to a blank password and enable automatic login from `Settings`>`User`.
-
-## Run the L4T Megascript and install the XFCE desktop environment
-
-After the installation has finished log out and select XFCE from the gear button located at the bottom-right corner of the login screen.
 
 ## Joystick mapping
 
@@ -34,6 +26,20 @@ sudo rm -r l4t-config
 ```
 
 Logout or restart.
+
+## Stylus theme for netflix
+
+https://userstyles.world/style/12142/kebi-streaming
+
+# Jammy
+
+## Automatic login
+
+Change the `Login` keyring password to a blank password and enable automatic login from `Settings`>`User`.
+
+## Run the L4T Megascript and install the XFCE desktop environment
+
+After the installation has finished log out and select XFCE from the gear button located at the bottom-right corner of the login screen.
 
 ## Sleep button
 
@@ -128,6 +134,3 @@ sudo mv chromebook-anki/anki.desktop /usr/share/applications/anki.desktop
 sudo mv chromebook-anki/anki.png /usr/share/pixmaps/anki.png
 sudo rm -r chromebook-anki
 ```
-## Stylus theme for netflix
-
-https://userstyles.world/style/12142/kebi-streaming
