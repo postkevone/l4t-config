@@ -36,15 +36,42 @@ sudo mkswap /swapfile
 sudo swapon /swapfile
 ```
 
-### Add login command so that the swap file is loaded automatically
-
-Check the status of rc-local:
+Check the status of the swap memory:
 
 ```bash
-sudo systemctl status rc-local
+swapon --show
 ```
 
-Create `/etc/rc.local` if not present already.
+Turn off the swap ram (do not use `-a` as it will also disable the zram):
+```bash
+sudo swapoff /swapfile
+```
+
+### Add login command so that the swap file is loaded automatically
+
+```bash
+sudo nano /etc/systemd/system/rc-local.service
+```
+<details>
+<summary>File contents</summary>
+
+```bash
+[Unit]
+ Description=/etc/rc.local Compatibility
+ ConditionPathExists=/etc/rc.local
+
+[Service]
+ Type=forking
+ ExecStart=/etc/rc.local start
+ TimeoutSec=0
+ StandardOutput=tty
+ RemainAfterExit=yes
+ SysVStartPriority=99
+
+[Install]
+ WantedBy=multi-user.target
+```
+</details>
 
 ```bash
 sudo nano /etc/rc.local
@@ -74,27 +101,11 @@ exit 0
 ```
 </details>
 
-Make sure /etc/rc.local file is executable.
-
 ```bash
 sudo chmod +x /etc/rc.local
-```
-
-Finally, enable the service on system boot:
-
-```bash
 sudo systemctl enable rc-local
-```
-
-Check the status of the swap memory:
-
-```bash
-swapon --show
-```
-
-Turn off the swap ram (do not use `-a` as it will also disable the zram):
-```bash
-sudo swapoff /swapfile
+sudo systemctl start rc-local.service
+sudo systemctl status rc-local.service
 ```
 
 ## Stylus theme for netflix
