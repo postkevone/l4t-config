@@ -73,7 +73,7 @@ swapon /swapfile
 exit 0
 ```
 </details>
-<br>
+
 Make sure /etc/rc.local file is executable.
 
 ```bash
