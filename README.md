@@ -27,10 +27,10 @@ sudo rm -r l4t-config
 
 Logout or restart.
 
-## Create 4GB swap RAM
+## Create 2GB swap RAM
 
 ```bash
-sudo dd if=/dev/zero of=/swapfile bs=1048576 count=4096
+sudo dd if=/dev/zero of=/swapfile bs=1048576 count=2048
 sudo chmod 600 /swapfile
 sudo mkswap /swapfile
 sudo swapon /swapfile
