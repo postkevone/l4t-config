@@ -112,6 +112,9 @@ sudo systemctl status rc-local.service
 
 https://userstyles.world/style/12142/kebi-streaming
 
+## Update Vulkan drivers
+https://github.com/flathub/org.yuzu_emu.yuzu/issues/911#issuecomment-1418259230
+
 # Jammy
 
 ## Automatic login
