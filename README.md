@@ -117,28 +117,23 @@ https://github.com/flathub/org.yuzu_emu.yuzu/issues/911#issuecomment-1418259230
 
 # Jammy
 
-## Automatic login
-
-Change the `Login` keyring password to a blank password and enable automatic login from `Settings`>`User`.
-
-## Sleep button
-
-In the `Power Manager` settings, set `When sleep button is pressed` to `Ask` and disable all the others.
-
-In the `Display` tab disable `Display power management` and set `Reduce after` to `never`.
-
-Disable everything in `Settings`>`Screensaver`.
-
 ## System program problem detected at startup fix
 
 Delete past crashes:
 ```bash
 sudo rm /var/crash/*
 ```
+
+## Automatic login
+
+Set a black chrome keyring password.
+
+Run update and L4T Megascript once.
+
 ## Install XFCE
 
 ```bash
-sudo install xfce4 xfce4-power-manager blueman -y
+sudo apt install xfce4 xfce4-power-manager xfce4-battery-plugin blueman -y
 ```
 
 ## Applications at login
@@ -149,7 +144,7 @@ Disable:
 
 - Auto-Rotate
 - Screensaver
-- XFCE power management (add `xfce4-power-management --no-daemon` instead)
+- XFCE power management (add `xfce4-power-manager --no-daemon` instead)
 
 Enable:
 
