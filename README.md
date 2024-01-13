@@ -112,7 +112,7 @@ sudo systemctl status rc-local.service
 
 https://userstyles.world/style/12142/kebi-streaming
 
-## Update Vulkan drivers
+## Update Vulkan drivers to 32.7
 https://github.com/flathub/org.yuzu_emu.yuzu/issues/911#issuecomment-1418259230
 
 # Jammy
@@ -120,10 +120,6 @@ https://github.com/flathub/org.yuzu_emu.yuzu/issues/911#issuecomment-1418259230
 ## Automatic login
 
 Change the `Login` keyring password to a blank password and enable automatic login from `Settings`>`User`.
-
-## Run the L4T Megascript and install the XFCE desktop environment
-
-After the installation has finished log out and select XFCE from the gear button located at the bottom-right corner of the login screen.
 
 ## Sleep button
 
@@ -139,8 +135,27 @@ Delete past crashes:
 ```bash
 sudo rm /var/crash/*
 ```
+## Install XFCE
 
-## Virtual Keyboard
+```bash
+sudo install xfce4 xfce4-power-manager blueman -y
+```
+
+## Applications at login
+
+`Settings`>`Application Autostart`
+
+Disable:
+
+- Auto-Rotate
+- Screensaver
+- XFCE power management (add `xfce4-power-management --no-daemon` instead)
+
+Enable:
+
+- Onboard
+
+## Onboard
 
 Install onboard:
 
@@ -154,26 +169,6 @@ Create a new shortcut from `Settings`>`Keyboard`>`Application Shortcuts` with th
 dbus-send --type=method_call --dest=org.onboard.Onboard /org/onboard/Onboard/Keyboard org.onboard.Onboard.Keyboard.ToggleVisible
 ```
 
-## Applications at login
-
-`Settings`>`Application Autostart`
-
-Disable:
-
-- Auto-Rotate (to disable auto rotate)
-- Backup monitor (unneeded)
-- Evolution Alarm Notify (unneeded)
-- Geoclue Demo agent (unneeded)
-- Print Queue Applet (unneeded, enable in you need printing services)
-- Screensaver (completely disable screensaver to fix sleep)
-- Ubuntu Advantage Notification (bloat)
-- Ubuntu report try to sends metrics data on release upgrade (unneeded)
-- XFCE Volume Daemon (disable to fix double notification)
-
-Enable:
-
-- Onboard
-
 ## Add the app menu to the XFCE panel
 
 Install `xfce4-appmenu-plugin`:
@@ -182,7 +177,7 @@ Install `xfce4-appmenu-plugin`:
 sudo apt-get install xfce4-appmenu-plugin
 ```
 
-## Install pip and Anki
+## Install pip
 
 Install pip and upgrade it:
 
@@ -196,6 +191,8 @@ Add .local/bin to PATH:
 ```bash
 export PATH=$PATH:$HOME/.local/bin
 ```
+
+## Install Anki
 
 Install PyQT packages:
 
