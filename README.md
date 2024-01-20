@@ -27,10 +27,10 @@ sudo rm -r l4t-config
 
 Logout or restart.
 
-## Create 2GB swap RAM
+## Create 1GB swap RAM
 
 ```bash
-sudo dd if=/dev/zero of=/swapfile bs=1048576 count=2048
+sudo dd if=/dev/zero of=/swapfile bs=1048576 count=1024
 sudo chmod 600 /swapfile
 sudo mkswap /swapfile
 sudo swapon /swapfile
@@ -47,65 +47,17 @@ Turn off the swap ram (do not use `-a` as it will also disable the zram):
 sudo swapoff /swapfile
 ```
 
-### Add login command so that the swap file is loaded automatically
+### Make the swap file permanent
 
 ```bash
-sudo nano /etc/systemd/system/rc-local.service
-```
-<details>
-<summary>File contents</summary>
-
-```bash
-[Unit]
- Description=/etc/rc.local Compatibility
- ConditionPathExists=/etc/rc.local
-
-[Service]
- Type=forking
- ExecStart=/etc/rc.local start
- TimeoutSec=0
- StandardOutput=tty
- RemainAfterExit=yes
- SysVStartPriority=99
-
-[Install]
- WantedBy=multi-user.target
-```
-</details>
-
-```bash
-sudo nano /etc/rc.local
+sudo cp /etc/fstab /etc/fstab.bak
+echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab
 ```
 
-<details>
-<summary>File contents</summary>
+## Delete Chrome desktop shortcut
 
 ```bash
-#!/bin/sh -e
-#
-# rc.local
-#
-# This script is executed at the end of each multiuser runlevel.
-# Make sure that the script will "exit 0" on success or any other
-# value on error.
-#
-# In order to enable or disable this script just change the execution
-# bits.
-#
-# By default this script does nothing.
-
-mkswap /swapfile
-swapon /swapfile
-
-exit 0
-```
-</details>
-
-```bash
-sudo chmod +x /etc/rc.local
-sudo systemctl enable rc-local
-sudo systemctl start rc-local.service
-sudo systemctl status rc-local.service
+sudo mv '/etc/xdg/autostart/nvchrome.desktop' '/etc/xdg/autostart/nvchrome.desktop.bak'
 ```
 
 ## Stylus theme for netflix
