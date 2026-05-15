@@ -55,6 +55,20 @@ Logout or restart.
 sudo dnf info nvidia-l4t-bsp-32.7.6
 ```
 
+## Remove packages
+
+```bash
+sudo dnf remove libreoffice*\
+                qrca \
+                okular \
+                kitty \
+                kde-connect \
+                neochat \
+                kcalc \
+                skanpage \
+                filelight
+```
+
 ## Create 1GB swap RAM
 
 ```bash
