@@ -1,13 +1,28 @@
 # l4t-config
-My configuration for L4T Ubuntu Bionic and Jammy
+My configuration for L4T Fedora 43, Ubuntu Bionic and Jammy
+
+## Disable auto rotation
+
+```bash
+systemctl --user disable auto-rotate.service
+```
 
 ## Update the build
+
+```bash
+sudo dnf up --refresh
+```
 
 ```bash
 sudo apt update && sudo apt-get dist-upgrade
 ```
 
-Restart.
+## Clean
+
+```bash
+sudo dnf autoremove
+sudo dnf clean all
+```
 
 ## Joystick mapping
 
@@ -26,6 +41,12 @@ sudo rm -r l4t-config
 ```
 
 Logout or restart.
+
+## Check VULKAN drivers
+
+```bash
+sudo dnf info nvidia-l4t-bsp-32.7.6
+```
 
 ## Create 1GB swap RAM
 
