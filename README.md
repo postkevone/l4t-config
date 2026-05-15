@@ -31,19 +31,21 @@ sudo dnf clean all
 sudo rpmdb --rebuilddb # rebuild corrupted db
 ```
 
-## Joystick mapping
+## Joystick mapping & Clocks mapping conf
 
-Backup original file:
+Backup original files:
 
 ```bash
 sudo mv /usr/share/X11/xorg.conf.d/50-joystick.conf /usr/share/X11/xorg.conf.d/50-joystick.conf.bak
+sudo mv /etc/nvpmodel/nvpmodel_t210b01.conf /etc/nvpmodel/nvpmodel_t210b01.conf.bak
 ```
 
-Use the new config file in this repository:
+Use the new config files from this repository:
 
 ```bash
 git clone https://github.com/postkevone/l4t-config.git
 sudo mv l4t-config/50-joystick.conf /usr/share/X11/xorg.conf.d/50-joystick.conf
+sudo mv l4t-config/nvpmodel_t210b01.conf /etc/nvpmodel/nvpmodel_t210b01.conf
 sudo rm -r l4t-config
 ```
 
