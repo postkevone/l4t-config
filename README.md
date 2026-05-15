@@ -7,6 +7,12 @@ My configuration for L4T Fedora 43, Ubuntu Bionic and Jammy
 systemctl --user disable auto-rotate.service
 ```
 
+## Enable SSh
+
+```bash
+sudo systemctl enable --now sshd
+```
+
 ## Update the build
 
 ```bash
