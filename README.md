@@ -58,7 +58,7 @@ sudo dnf info nvidia-l4t-bsp-32.7.6
 ## Remove packages
 
 ```bash
-sudo dnf remove libreoffice*\
+sudo dnf remove libreoffice *\
                 qrca \
                 okular \
                 kitty \
