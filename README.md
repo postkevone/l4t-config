@@ -22,6 +22,7 @@ sudo apt update && sudo apt-get dist-upgrade
 ```bash
 sudo dnf autoremove
 sudo dnf clean all
+sudo rpmdb --rebuilddb # rebuild corrupted db
 ```
 
 ## Joystick mapping
